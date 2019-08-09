@@ -1,0 +1,39 @@
+{
+  "name": "hapi-start",
+  "version": "0.1.0",
+  "description": "[Hapi](https://hapi.dev/) boilerplate",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index",
+    "test": "NODE_PATH=lib lab --verbose -La @hapi/code -t 100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kuryaki/hapi-start.git"
+  },
+  "keywords": [
+    "hapi",
+    "template"
+  ],
+  "author": "David Roncancio <david@roncancio.me>",
+  "bugs": {
+    "url": "https://github.com/kuryaki/hapi-start/issues"
+  },
+  "homepage": "https://github.com/kuryaki/hapi-start/blob/master/README.md",
+  "engines": {
+    "node": ">=10.15",
+    "npm": ">=6"
+  },
+  "devDependencies": {
+    "@hapi/code": "6.x.x",
+    "@hapi/lab": "20.x.x",
+    "eslint": "5.x.x",
+    "eslint-config-hapi": "12.x.x",
+    "eslint-plugin-hapi": "4.x.x"
+  },
+  "dependencies": {
+    "@hapi/hapi": "18.x.x",
+    "@hapi/basic": "5.x.x",
+    "@hapi/joi": "15.x.x"
+  }
+}

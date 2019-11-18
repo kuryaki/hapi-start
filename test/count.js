@@ -15,11 +15,33 @@ describe('Count Gretings', () => {
 
     let server;
 
+    const greetingEvents = [];
+
     before(async () => {
 
         server = new Hapi.Server();
 
         await server.register([
+            {
+                plugin: {
+                    name: 'db',
+                    register: () => {
+
+                        server.app.db = {
+                            greetings: {
+                                count: () => {
+
+                                    return greetingEvents.length;
+                                },
+                                insert: (event) => {
+
+                                    greetingEvents.push(event);
+                                }
+                            }
+                        };
+                    }
+                }
+            },
             {
                 plugin: Greetings,
                 options: {

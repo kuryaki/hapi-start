@@ -5,13 +5,13 @@ const Code = require('@hapi/code');
 const Lab = require('@hapi/lab');
 const Hapi = require('@hapi/hapi');
 
-const Hello = require('modules/greeting');
+const Greetings = require('modules/greetings');
 
 const lab = exports.lab = Lab.script();
 const { describe, it, before } = lab;
 const expect = Code.expect;
 
-describe('Hello', () => {
+describe('Greetings', () => {
 
     let server;
 
@@ -21,7 +21,7 @@ describe('Hello', () => {
 
         await server.register([
             {
-                plugin: Hello,
+                plugin: Greetings,
                 options: {
                     es: { hello: 'Hola'  },
                     en: { hello: 'Hello' }

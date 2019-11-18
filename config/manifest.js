@@ -5,7 +5,7 @@ const BasicAuth = require('@hapi/basic');
 
 // Modules
 const Auth = require('../lib/modules/auth');
-const Hello = require('../lib/modules/hello');
+const Greeting = require('../lib/modules/greeting');
 
 module.exports = {
     options: {
@@ -23,7 +23,7 @@ module.exports = {
             }
         },
         {
-            plugin: Hello,
+            plugin: Greeting,
             options: {
                 es: {
                     hello: 'Hola'

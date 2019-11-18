@@ -5,7 +5,7 @@ const Code = require('@hapi/code');
 const Lab = require('@hapi/lab');
 const Hapi = require('@hapi/hapi');
 
-const Hello = require('modules/hello');
+const Hello = require('modules/greeting');
 
 const lab = exports.lab = Lab.script();
 const { describe, it, before } = lab;
@@ -28,6 +28,19 @@ describe('Hello', () => {
                 }
             }
         ]);
+    });
+
+    it('works by default', async () => {
+
+        const request = {
+            method: 'GET',
+            url: '/hello'
+        };
+
+        const response = await server.inject(request);
+
+        expect(response.statusCode).to.equal(200);
+        expect(response.result).to.equal('Hello world!');
     });
 
     it('works', async () => {
